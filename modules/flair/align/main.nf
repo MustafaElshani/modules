@@ -39,7 +39,7 @@ process FLAIR_ALIGN {
 
     output:
     // TODO nf-core: Named file extensions MUST be emitted for ALL output channels
-    tuple val(meta), path("*.bam"), emit: bam
+    tuple val(meta), path("*.fastq"), emit: fastq
     // TODO nf-core: List additional required output channels/values here
     path "versions.yml"           , emit: versions
 
@@ -59,17 +59,17 @@ process FLAIR_ALIGN {
     // TODO nf-core: Please replace the example samtools command below with your module's command
     // TODO nf-core: Please indent the command appropriately (4 spaces!!) to help with readability ;)
     """
-    samtools \\
-        sort \\
+    flair \\
+        align \\
         $args \\
-        -@ $task.cpus \\
-        -o ${prefix}.bam \\
+        -t $task.cpus \\
+        -o flair/flair_align/${prefix}.aligned \\
         -T $prefix \\
         $bam
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        flair: \$(echo \$(samtools --version 2>&1) | sed 's/^.*samtools //; s/Using.*\$//' ))
+        flair: \$(echo \$(flair --version 2>&1) | sed 's/^.*flair //; s/Using.*\$//' ))
     END_VERSIONS
     """
 }
