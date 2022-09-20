@@ -1,0 +1,39 @@
+name: "flair_diffsplice"
+## TODO nf-core: Add a description of the module and list keywords
+description: write your description here
+keywords:
+  - sort
+tools:
+  - "flair":
+      ## TODO nf-core: Add a description and other details for the software below
+      description: "Correction, isoform definition, and alternative splicing analysis of noisy reads (ONT and PacBio)."
+      homepage: "None"
+      documentation: "None"
+      tool_dev_url: "None"
+      doi: ""
+      licence: "['BSD-3']"
+
+## TODO nf-core: Add a description of all of the variables used as input
+input:
+  #
+  ## TODO nf-core: Delete / customise this example input
+  - bam:
+      type: file
+      description: BAM/CRAM/SAM file
+      pattern: "*.{bam,cram,sam}"
+
+## TODO nf-core: Add a description of all of the variables used as output
+output:
+  #
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+  ## TODO nf-core: Delete / customise this example output
+  - bam:
+      type: file
+      description: Sorted BAM/CRAM/SAM file
+      pattern: "*.{bam,cram,sam}"
+
+authors:
+  - "@MustafaElshani"

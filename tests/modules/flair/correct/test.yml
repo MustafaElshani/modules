@@ -1,0 +1,14 @@
+## TODO nf-core: Please run the following command to build this file:
+#                nf-core modules create-test-yml flair/correct
+- name: "flair correct"
+  command: nextflow run ./tests/modules/flair/correct -entry test_flair_correct -c ./tests/config/nextflow.config -c ./tests/modules/flair/correct/nextflow.config
+  tags:
+    - "flair"
+    #
+    - "flair/correct"
+    #
+  files:
+    - path: "output/flair/test.bam"
+      md5sum: e667c7caad0bc4b7ac383fd023c654fc
+    - path: output/flair/versions.yml
+      md5sum: a01fe51bc4c6a3a6226fbf77b2c7cf3b
