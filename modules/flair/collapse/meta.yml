@@ -1,16 +1,15 @@
-name: "flair_collapse"
-## TODO nf-core: Add a description of the module and list keywords
+name: "flair_align"
 description: write your description here
 keywords:
-  - sort
+  - flair
+  - colapse
 tools:
   - "flair":
-      ## TODO nf-core: Add a description and other details for the software below
       description: "Correction, isoform definition, and alternative splicing analysis of noisy reads (ONT and PacBio)."
-      homepage: "None"
-      documentation: "None"
-      tool_dev_url: "None"
-      doi: ""
+      homepage: "https://github.com/BrooksLabUCSC/flair"
+      documentation: "https://flair.readthedocs.io/en/latest/"
+      tool_dev_url: "https://github.com/BrooksLabUCSC/flair"
+      doi: "10.1038/s41467-020-15171-6"
       licence: "['BSD-3']"
 
 ## TODO nf-core: Add a description of all of the variables used as input
