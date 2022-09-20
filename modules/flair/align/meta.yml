@@ -2,15 +2,16 @@ name: "flair_align"
 ## TODO nf-core: Add a description of the module and list keywords
 description: write your description here
 keywords:
-  - sort
+  - flair
+  - align
 tools:
   - "flair":
       ## TODO nf-core: Add a description and other details for the software below
       description: "Correction, isoform definition, and alternative splicing analysis of noisy reads (ONT and PacBio)."
-      homepage: "None"
-      documentation: "None"
-      tool_dev_url: "None"
-      doi: ""
+      homepage: "https://github.com/BrooksLabUCSC/flair"
+      documentation: "https://flair.readthedocs.io/en/latest/"
+      tool_dev_url: "https://github.com/BrooksLabUCSC/flair"
+      doi: "10.1038/s41467-020-15171-6"
       licence: "['BSD-3']"
 
 ## TODO nf-core: Add a description of all of the variables used as input
@@ -21,12 +22,6 @@ input:
       description: |
         Groovy Map containing sample information
         e.g. [ id:'test', single_end:false ]
-  # 
-  ## TODO nf-core: Delete / customise this example input
-  - bam:
-      type: file
-      description: BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
 
 ## TODO nf-core: Add a description of all of the variables used as output
 output:
@@ -45,7 +40,12 @@ output:
   - bam:
       type: file
       description: Sorted BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      pattern: "*.{bam,bai,sam}"
+      
+  - psl:
+      type: file
+      description: Optional with --psl. Aligned reads in psl format can be visualized in IGV or the UCSC Genome browser
+      pattern: "*.{psl}"
 
 authors:
   - "@MustafaElshani"
